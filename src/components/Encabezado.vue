@@ -7,6 +7,7 @@
       ></v-app-bar-nav-icon>
 
       <div class="d-flex align-center">
+        <router-link to='/'>
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -16,6 +17,7 @@
           width="100"
           height="50"
         />
+        </router-link>
       </div>
 
       <v-spacer></v-spacer>
@@ -24,14 +26,14 @@
         <v-btn href="/" class="ma-1" outlined color="white" elevation="2">
           <v-icon>mdi-home</v-icon>Inicio</v-btn
         >
-        <v-btn href="/nuevo" class="ma-1" outlined color="white" elevation="2">
-          <v-icon>mdi-basket-plus</v-icon>Nuevo Anuncio</v-btn
+        <v-btn href="/nuevo" class="ma-1"  color="teal" elevation="2">
+          <v-icon>mdi-basket-plus</v-icon> Nuevo Anuncio</v-btn
         >
         <v-btn
           href="/estadisticas"
           class="ma-1"
-          outlined
-          color="white"
+          
+          color="cyan"
           elevation="2"
         >
           <v-icon>mdi-chart-areaspline</v-icon>Estadisticas</v-btn
@@ -39,8 +41,8 @@
         <v-btn
           href="/carrito"
           class="ma-1"
-          outlined
-          color="white"
+          
+          color="#f0993c"
           elevation="2"
         >
           <v-icon>mdi-cart-variant</v-icon>Carrito</v-btn
@@ -58,13 +60,14 @@
       <v-layout mt-4 column aling-center app>
         <v-flex>
           <v-img
-            alt="Vuetify Logo"
+            alt="Logo"
             class="shrink mr-2"
             contain
             src="../assets/logo.png"
             transition="scale-transition"
             width="70%"
             height="60%"
+            href="/"
           />
         </v-flex>
         <v-list dense>

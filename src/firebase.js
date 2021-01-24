@@ -1,6 +1,8 @@
-const firebase = require("firebase/app");
-require("firebase/firestore");
-require("firebase/storage");
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/firebase-storage"
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVydrCusRnlXJleMovy0UZAeg9hFVEQEk",
@@ -15,4 +17,4 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 const storage = firebase.storage();
-export { firesabe, db, storage };
+export { firebase, db, storage };
