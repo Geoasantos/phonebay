@@ -97,6 +97,7 @@
                 :items="sistema"
                 label="Sistema Operativo"
                 required
+                
               ></v-select>
             </v-col>
             <v-col>
@@ -142,7 +143,7 @@
     <v-row class="justify-center">
       <v-btn
         color="primary"
-        @click="probaralert"
+        @click="crear"
         :loading="loading"
         :disabled="archivo == null"
         class="mr-3"
