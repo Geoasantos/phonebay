@@ -18,7 +18,7 @@
             :counter="50"
             :rules="txtRules"
             label="Vendedor"
-            append-icon="mdi-account"
+            append-icon="mdi-account-cash"
             required
           ></v-text-field>
 
@@ -44,7 +44,7 @@
             label="Agregar Fotos"
             multiple
             v-model="archivo"
-            append-icon="mdi-camera"
+            append-icon="mdi-camera-plus"
           ></v-file-input>
         </div>
       </v-col>
@@ -56,7 +56,7 @@
                 v-model="anuncioLocal.marca"
                 :counter="50"
                 :rules="txtRules"
-                append-icon="mdi-briefcase"
+                append-icon="mdi-layers-triple"
                 label="Marca"
                 required
               ></v-text-field>
@@ -77,7 +77,7 @@
                 v-model="anuncioLocal.pantalla"
                 label="Pantalla (Pulgadas)"
                 :rules="numRules"
-                append-icon="mdi-tablet-cellphone"
+                append-icon="mdi-cellphone-screenshot"
                 required
               ></v-text-field>
             </v-col>
@@ -105,6 +105,7 @@
                 v-model="anuncioLocal.version"
                 label="Version del Sistema"
                 :rules="numRules"
+                append-icon="mdi-cellphone-cog"
                 required
               ></v-text-field>
             </v-col>
@@ -171,7 +172,7 @@ export default {
       sistema: ["Android", "Ios", "Windows"],
       valid: true,
       loading: false,
-      archivo: {},
+      archivo: null,
       txtRules: [
         (v) => !!v || "Este campo es requerido",
         (v) => (v && v.length <= 50) || "Debe tener menos de 50 caracteres",
