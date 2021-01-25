@@ -3,23 +3,21 @@
     <h1>{{ anuncio.titulo }} ${{ anuncio.precio }}</h1>
 
     <v-divider></v-divider>
-    <br/>
+    <br />
     <v-row>
-      
       <v-col class="col-md-6 col-12">
-        
-          <v-carousel
-            height="400"
-            width="563"
-            hide-delimiter-background
-            show-arrows-on-hover
-            cycle
-          >
-            <v-carousel-item v-for="(item, i) in anuncio.images" :key="i">
-              <img :src="item" style="height: 100%; width: 563;" />
-            </v-carousel-item>
-          </v-carousel>
-        <br/>
+        <v-carousel
+          height="400"
+          width="563"
+          hide-delimiter-background
+          show-arrows-on-hover
+          cycle
+        >
+          <v-carousel-item v-for="(item, i) in anuncio.images" :key="i">
+            <img :src="item" style="height: 100%; width: 563" />
+          </v-carousel-item>
+        </v-carousel>
+        <br />
 
         <v-card elevation="13" width="563">
           <v-card-text>
@@ -29,50 +27,43 @@
             </v-row>
             <v-row> {{ anuncio.descripcion }}</v-row>
           </v-card-text>
-          <v-card-actions>
-            
-          </v-card-actions>
+          <v-card-actions> </v-card-actions>
         </v-card>
 
         <br />
 
-         <v-card elevation="13" width="563">
-          <v-card-title >
+        <v-card elevation="13" width="563">
+          <v-card-title>
             <v-icon>mdi-card-account-details</v-icon>
             Informacion del vendendor</v-card-title
           >
 
           <v-card-text>
-            <br/>
+            <br />
             <div>
               <v-row>
                 <v-col>
                   <v-row>
-                  <v-icon>mdi-account</v-icon>
-                  <h3>{{ anuncio.vendedor }}</h3>
+                    <v-icon>mdi-account</v-icon>
+                    <h3>{{ anuncio.vendedor }}</h3>
                   </v-row>
                 </v-col>
                 <v-col>
                   <v-row>
-                  <v-icon>mdi-phone</v-icon>
-                  <h3>{{anuncio.tel}}</h3>
+                    <v-icon>mdi-phone</v-icon>
+                    <h3>{{ anuncio.tel }}</h3>
                   </v-row>
                 </v-col>
               </v-row>
             </div>
           </v-card-text>
           <v-card-actions></v-card-actions>
-
-
         </v-card>
-
-       
-
       </v-col>
 
       <v-col>
-
-        <v-card elevation="13" width="563">
+        <v-card elevation="13" width="563" height="400">
+          <br /><br />
           <v-card-title>
             <v-icon>mdi-cellphone-information</v-icon>
             Especificaciones Tecnicas</v-card-title
@@ -108,13 +99,27 @@
             </ul>
           </v-card-text>
         </v-card>
-
+        <br />
+        <br /><br /><br />
+        <v-row class="justify-center">
+          <v-btn
+            elevation="2"
+            large
+            color="primary"
+            @click="comprar"
+            class="mr-3"
+            >Comprar</v-btn
+          >
+          <v-btn  elevation="2"
+            large color="error" @click="cancelar" class="mr-3">Cancelar</v-btn>
+        </v-row>
       </v-col>
     </v-row>
   </div>
 </template>
 <script>
 import { mapActions, mapState } from "vuex";
+import Swal from "sweetalert2";
 export default {
   data() {
     return {
@@ -125,6 +130,21 @@ export default {
     this.getAnuncio(this.id);
   },
   methods: {
+    comprar() {
+       Swal.fire({
+             
+              icon: "success",
+              title: "<strong>Felicidades </strong>",
+              html:"<p>Su compra se ha realizado con exito</p>",
+              timer: 2000,
+              showConfirmButton: false,
+             
+            })
+    },
+    cancelar() {
+      this.$router.push("/");
+    },
+
     ...mapActions(["getAnuncio"]),
   },
   computed: {

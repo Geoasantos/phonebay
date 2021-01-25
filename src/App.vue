@@ -9,9 +9,10 @@
       </v-container>
     </v-main>
 
- <v-footer app>
+
     <!-- -->
-  </v-footer>
+    <foot/>
+ 
 
   </v-app>
   
@@ -19,12 +20,14 @@
 
 <script>
 import Encabezado from "./components/Encabezado";
+import foot from "./components/foot";
+
 
 export default {
   name: "App",
 
   components: {
-    Encabezado,
+    Encabezado,foot,
   },
 
   data: () => ({

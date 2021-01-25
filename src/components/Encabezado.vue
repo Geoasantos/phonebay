@@ -39,7 +39,7 @@
           <v-icon>mdi-chart-areaspline</v-icon>Estadisticas</v-btn
         >
         <v-btn
-          href="/carrito"
+          
           class="ma-1"
           
           color="#f0993c"
@@ -95,7 +95,7 @@
               <v-list-item-title>Estadisticas</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item link href="/carrito">
+          <v-list-item link >
             <v-list-item-icon>
               <v-icon color="white">mdi-cart-variant</v-icon>
             </v-list-item-icon>
